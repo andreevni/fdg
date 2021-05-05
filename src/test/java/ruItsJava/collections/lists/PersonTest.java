@@ -9,7 +9,7 @@ import ru.itsjava.git.Person;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
+@DisplayName("Class Person")
 public class PersonTest {
     @DisplayName("Check Get Method : ")
     @Test
