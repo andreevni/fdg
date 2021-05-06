@@ -26,43 +26,52 @@ public class BookMain {
         Book darkProphecy = new Book(" The Dark Prophecy", " Rick Riordan", 860);
         Book lightningThief = new Book(" The Lightning Thief", " Rick Riordan", 1300);
         Book littlePrince = new Book(" The Little Prince", " Antonie de Saint-Exupery", 1000);
-        bookList.add(0, javaPhilosofy);
-        bookList.add(1, javaCompleteReference);
-        bookList.add(1, javaCompleteReference);
-        bookList.add(1, javaCompleteReference);
-        bookList.add(1, javaCompleteReference);
-        bookList.add(1, javaCompleteReference);
-        bookList.add(2, flowersForEldj);
-        bookList.add(3, grafMonteCristo);
-        bookList.add(4, annaKarenina);
-        bookList.add(5, killPeresmeshnik);
-        bookList.add(6, sharpObjects);
-        bookList.add(7, peterPan);
-        bookList.add(8, senseAndSensibility);
-        bookList.add(9, theFaultInOurStars);
-        bookList.add(10, bloodOfOlympus);
-        bookList.add(11, wutheringHeights);
-        bookList.add(12, wonderfulWizardOfOz);
-        bookList.add(13, goneGirl);
-        bookList.add(14, seducedInTheDark);
-        bookList.add(15, fallenCrestHigh);
-        bookList.add(16, hungerGames);
-        bookList.add(17, darkProphecy);
-        bookList.add(18, lightningThief);
-        bookList.add(19, littlePrince);
+        bookList.add(javaPhilosofy);
+        bookList.add(javaCompleteReference);
+        bookList.add(javaCompleteReference);
+        bookList.add(javaCompleteReference);
+        bookList.add(javaCompleteReference);
+        bookList.add(javaCompleteReference);
+        bookList.add(flowersForEldj);
+        bookList.add(grafMonteCristo);
+        bookList.add(annaKarenina);
+        bookList.add(killPeresmeshnik);
+        bookList.add(sharpObjects);
+        bookList.add(peterPan);
+        bookList.add(senseAndSensibility);
+        bookList.add(theFaultInOurStars);
+        bookList.add(bloodOfOlympus);
+        bookList.add(wutheringHeights);
+        bookList.add(wonderfulWizardOfOz);
+        bookList.add(goneGirl);
+        bookList.add(seducedInTheDark);
+        bookList.add(fallenCrestHigh);
+        bookList.add(hungerGames);
+        bookList.add(darkProphecy);
+        bookList.add(lightningThief);
+        bookList.add(littlePrince);
 
+//  Получил книгу по первому индексу
         System.out.println("bookList.get(0) = " + bookList.get(0));
-        System.out.println("bookList.get(19) = " + bookList.get(19));
-        bookList.add(2, killPeresmeshnik);
-        bookList.add(0, sharpObjects);
+//  Получил книгу под последним индексом 23 , так как выше были добавлены 5 элементов.
+        System.out.println("bookList.get(23) = " + bookList.get(23));
+//  Добавил 6 элемент на 3 позицию
+        bookList.add(2, flowersForEldj);
+// Добавил 7 элемент на 1 позицию
+        bookList.add(0, grafMonteCristo);
         System.out.println("bookList = " + bookList);
-
+//  Cоздал новый лист
         List anotherOneBookList = new ArrayList();
+//  Скопировал в новый лист , обьекты из старого через addAll()
         anotherOneBookList.addAll(bookList);
         System.out.println("anotherOneBookList = " + anotherOneBookList);
+//  Ремувнул по значению
         anotherOneBookList.remove(sharpObjects);
+//   Проверил
         System.out.println("anotherOneBookList = " + anotherOneBookList);
+//  Ремувнул по индексу
         anotherOneBookList.remove(0);
+//  Проверил удаление по индексу и в классе Book поменял вывод метода toString(), чтобы был вывод к примере
         System.out.println("anotherOneBookList = " + anotherOneBookList);
 
     }
