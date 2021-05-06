@@ -68,11 +68,13 @@ public class BookMain {
 //  Ремувнул по значению
         anotherOneBookList.remove(sharpObjects);
 //   Проверил
-        System.out.println("anotherOneBookList = " + anotherOneBookList);
+        System.out.println("anotherOneBookList.contains(sharpObjects) = " + anotherOneBookList.contains(sharpObjects));
 //  Ремувнул по индексу
         anotherOneBookList.remove(0);
 //  Проверил удаление по индексу и в классе Book поменял вывод метода toString(), чтобы был вывод к примере
-        System.out.println("anotherOneBookList = " + anotherOneBookList);
+        System.out.println("anotherOneBookList.contains(0) = " + anotherOneBookList.contains(0));
+
+        System.out.println(anotherOneBookList);
 
     }
 }
