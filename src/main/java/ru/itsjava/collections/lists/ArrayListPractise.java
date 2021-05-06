@@ -35,6 +35,21 @@ public class ArrayListPractise {
         watchesList.set(0, seiko);
         System.out.println(watchesList);
 
+
+        List <Watch> watchesOmegaList = new ArrayList<>();
+        Watch andrewOmega = new Watch("Omega", "Andrew", 100_000.0);
+        Watch romanOmega = new Watch("Omega", "Roman", 100_000.0);
+
+        watchesOmegaList.add(andrewOmega);
+        watchesOmegaList.add(romanOmega);
+        System.out.println("watchesOmegaList = " + watchesOmegaList);
+
+        watchesList.addAll(watchesOmegaList);
+        System.out.println("watchesList = " + watchesList);
+        Watch vitalyWatch = new Watch("Seiko", "Vitaly", 20_000.0);
+        watchesList.add(1, vitalyWatch);
+        System.out.println("watchesList = " + watchesList);
+
     }
 
 }
