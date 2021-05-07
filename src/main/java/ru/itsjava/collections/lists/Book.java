@@ -9,7 +9,7 @@ import lombok.Data;
 public class Book {
     private final String title;
     private final String author;
-    private int pagesCount;
+    private final int pagesCount;
 
     @Override
     public String toString() {

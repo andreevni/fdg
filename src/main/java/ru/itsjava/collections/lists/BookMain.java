@@ -1,7 +1,13 @@
 package ru.itsjava.collections.lists;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.function.DoubleToIntFunction;
 
 public class BookMain {
     public static void main(String[] args) {
@@ -73,7 +79,6 @@ public class BookMain {
         anotherOneBookList.remove(0);
 //  Проверил удаление по индексу и в классе Book поменял вывод метода toString(), чтобы был вывод как в примере
         System.out.println("anotherOneBookList.contains(0) = " + anotherOneBookList.contains(0));
-
         System.out.println(anotherOneBookList);
 
     }
