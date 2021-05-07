@@ -24,6 +24,7 @@ public class PersonMain {
             }
         }
         System.out.println();
+//        средний возраст женщин
         int age = olga.getAge() + svetlana.getAge() + nastya.getAge() + anna.getAge();
         System.out.println("Средний возраст всех женщин : " + age / 4 + " лет");
 
