@@ -19,8 +19,8 @@ public class MyArrayList {
     }
 
     public boolean isEmpty() {
-        if (realSize == 0) return true;
-        return false;
+        return realSize == 0;
+
     }
 
     public boolean contains(Object o) {
