@@ -40,8 +40,7 @@ public class MyArrayListPrac {
         System.out.println("list.get(0) = " + list1.get(0));
         list1.set(0,"Elem11");
         System.out.println(list1);
-        list1.add(1,"Hello!");
-        System.out.println(list1);
+
 
 
 
