@@ -45,11 +45,23 @@ public class MyArrayList {
     }
 
     public boolean remove(Object o) {
-        array = new Object[array.length - 1];
+        int delIndex = -1;
         for (int i = 0; i < array.length; i++) {
-            System.arraycopy(array, 0, array, 0, array.length - 1);
+            if (array[i] != null && array[i].equals(o)) {
+                delIndex = i;
+                break;
+            }
         }
-        return false;
+        if (array.length - 1 - delIndex >= 0) {
+            System.arraycopy(array, delIndex + 1, array, delIndex, array.length - 1 - delIndex);
+        }
+        if (delIndex == -1) {
+            return false;
+        } else {
+            realSize--;
+            return true;
+        }
+
     }
 
     public void clear() {
@@ -59,22 +71,54 @@ public class MyArrayList {
 
 
     public Object get(int index) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == array[index]) {
+                return array[index];
+            }
+        }
         return null;
     }
 
     public Object set(int index, Object element) {
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == array[index]) {
+                array[index] = element;
+            }
+        }
         return null;
     }
 
     public void add(int index, Object element) {
 
+
     }
 
     public Object remove(int index) {
-        return null;
+        checkIndex(index);
+        Object resElement = array[index];
+        if (array.length - 1 - index >= 0) {
+            System.arraycopy(array, index + 1, array, index, array.length - 1 - index);
+        }
+        realSize--;
+        return resElement;
+    }
+
+    private void checkIndex(int index) {
+        if (!isCorrectIndex(index)) {
+            throw new ArrayIndexOutOfBoundsException("Некорректный индекс");
+        }
+    }
+
+    private boolean isCorrectIndex(int index) {
+        if ((index >= -1) || (index < realSize)) {
+            return true;
+        }
+        return false;
     }
 
     public int indexOf(Object o) {
+
         return 0;
     }
 
