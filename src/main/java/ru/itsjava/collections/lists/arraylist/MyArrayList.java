@@ -71,23 +71,31 @@ public class MyArrayList {
 
 
     public Object get(int index) {
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == array[index]) {
-                return array[index];
-            }
-        }
-        return null;
+        return array[index];
+//        for (int i = 0; i < array.length; i++) {
+//            if (array[i] == array[index]) {
+//                return array[index];
+//            }
+//        }
+
     }
 
     public Object set(int index, Object element) {
-
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == array[index]) {
-                array[index] = element;
-            }
+        if (index <= realSize) {
+            array[index] = element;
+            return element;
         }
         return null;
+
+//        for (int i = 0; i < array.length; i++) {
+//            if (array[i] == array[index]) {
+//                array[index] = element;
+//            }
+//        }
+
     }
+
+
 
     public void add(int index, Object element) {
 

@@ -37,8 +37,8 @@ public class MyArrayListPrac {
         list1.add("Element3");
         list1.add("Element4");
         System.out.println("list = " + list1);
-        System.out.println("list.get(0) = " + list1.get(0));
-        list1.set(0,"Elem11");
+        System.out.println("list.get(0) = " + list1.get(3));
+        System.out.println("list1.set(0,\"Elem11\") = " + list1.set(0, "Elem11"));
         System.out.println(list1);
 
 
