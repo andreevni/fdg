@@ -71,7 +71,12 @@ public class MyArrayList {
 
 
     public Object get(int index) {
-        return array[index];
+        if (isCorrectIndex(index)) {
+            return array[index];
+        }
+        return null;
+
+
 //        for (int i = 0; i < array.length; i++) {
 //            if (array[i] == array[index]) {
 //                return array[index];
@@ -81,7 +86,7 @@ public class MyArrayList {
     }
 
     public Object set(int index, Object element) {
-        if (index <= realSize) {
+        if (index <= realSize)  {
             array[index] = element;
             return element;
         }

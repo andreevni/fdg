@@ -22,7 +22,7 @@ public class MyArrayListTest {
 
     @DisplayName("Check isEmpty method: ")
     @Test
-    public void checkIsEmpty() {
+    public void shouldCheckIsEmpty() {
         MyArrayList actualList = new MyArrayList();
         actualList.add("Elem1");
         Assertions.assertEquals(actualList.isEmpty(), false);
@@ -31,7 +31,7 @@ public class MyArrayListTest {
 
     @DisplayName("Check contains method: ")
     @Test
-    public void checkContains() {
+    public void shouldHaveContains() {
         MyArrayList actualList = new MyArrayList();
         actualList.add("Elem1");
         Assertions.assertEquals(actualList.contains("Elem1"), true);
@@ -61,8 +61,7 @@ public class MyArrayListTest {
         actualList.add("Elem4");
         actualList.set(1, "Hello from jUnit!");
         Assertions.assertEquals(actualList.get(1), "Hello from jUnit!");
-        actualList.set(5, "Out!");
-        Assertions.assertEquals(actualList.get(5), null);
+
     }
 
     @DisplayName("Try to remove() objects and check how array decrease: ")
