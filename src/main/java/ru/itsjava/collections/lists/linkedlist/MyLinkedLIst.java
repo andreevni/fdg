@@ -114,9 +114,8 @@ public class MyLinkedLIst {
             head.setValue(element);
             return head.getValue();
         }
-        while (curNode.getNext() != null) {
+        while ((curNode = curNode.getNext()) != null) {
             count++;
-            curNode = curNode.getNext();
             if (count == index) {
                 curNode.setValue(element);
                 return curNode.getValue();
