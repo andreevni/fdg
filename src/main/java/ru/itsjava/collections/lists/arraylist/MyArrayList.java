@@ -24,7 +24,7 @@ public class MyArrayList {
     }
 
     public boolean contains(Object o) {
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i < realSize; i++) {
             if (array[i] == o) {
                 return true;
             }
@@ -66,15 +66,13 @@ public class MyArrayList {
 
     public void clear() {
         array = new Object[array.length];
-
+        realSize = 0;
     }
 
 
     public Object get(int index) {
-        if (isCorrectIndex(index)) {
-            return array[index];
-        }
-        return null;
+        checkIndex(index);
+        return array[index];
 
 
 //        for (int i = 0; i < array.length; i++) {
@@ -86,24 +84,22 @@ public class MyArrayList {
     }
 
     public Object set(int index, Object element) {
-        if (index <= realSize)  {
-            array[index] = element;
-            return element;
-        }
-        return null;
-
-//        for (int i = 0; i < array.length; i++) {
-//            if (array[i] == array[index]) {
-//                array[index] = element;
-//            }
-//        }
-
+        checkIndex(index);
+        array[index] = element;
+        return element;
     }
 
 
-
     public void add(int index, Object element) {
+        checkIndex(index);
 
+        for (int i = realSize; i >= index + 1; i--) {
+            array[i] = array[i - 1];
+
+        }
+
+        array[index] = element;
+        realSize++;
 
     }
 
@@ -124,18 +120,27 @@ public class MyArrayList {
     }
 
     private boolean isCorrectIndex(int index) {
-        if ((index >= -1) || (index < realSize)) {
+        if ((index >= 0) && (index <= realSize)) {
             return true;
         }
         return false;
     }
 
     public int indexOf(Object o) {
-
-        return 0;
+        for (int i = 0; i < realSize; i++) {
+            if (array[i].equals(o)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     public int lastIndexOf(Object o) {
+        for (int i = realSize; i >= 0; i--) {
+            if (array[i].equals(o)) {
+                return i;
+            }
+        }
         return 0;
     }
 
