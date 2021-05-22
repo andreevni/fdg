@@ -1,6 +1,8 @@
 package ru.itsjava.collections.lists.linkedlist;
 
 
+import java.awt.*;
+
 public class MyLinkedLIst {
     private Node head;
 
@@ -125,12 +127,6 @@ public class MyLinkedLIst {
     }
 
     public void add(int index, Object element) {
-        Node resNode = head;
-        Node curNode = head;
-        int count = 0;
-        if (head != null && index == 0) {
-            head = head.getNext();
-        }
 
 
     }
@@ -202,12 +198,27 @@ public class MyLinkedLIst {
         Node curNode = head;
         Node resNode = head;
         int count = 0;
-        int count2 = 0;
+        int count2 = -1;
         if (head.getValue().equals(o)) {
             return 0;
         }
+        while ((curNode = curNode.getNext()) != null) {
+            count++;
+            resNode = resNode.getNext();
+            if (curNode.getValue().equals(o) && curNode.getNext() != null) {
+                curNode = curNode.getNext();
+            }
 
+            if (resNode.getValue().equals(o)) {
+                count2 = count;
+            }
 
+            if (curNode.getValue().equals(o) && curNode.getNext() == null) {
+                return count;
+            } else if (!curNode.getValue().equals(o) && curNode.getNext() == null) {
+                return count2;
+            }
+        }
         return -1;
     }
 

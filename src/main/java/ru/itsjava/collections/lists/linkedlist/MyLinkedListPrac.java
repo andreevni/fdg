@@ -22,9 +22,13 @@ public class MyLinkedListPrac {
 //        System.out.println("list.contains(\"String2\") = " + list.contains("String2"));
 //        System.out.println("list.indexOf(\"S\") = " + list.indexOf("String4"));
         list.add("String2");
+        list.add("Str5");
+        list.add("Str6");
 
         System.out.println(list);
-        System.out.println("list.lastIndexOf(\"String1\") = " + list.lastIndexOf("String2"));
+
+
+
 
 
     }
