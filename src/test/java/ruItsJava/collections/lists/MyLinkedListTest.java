@@ -3,14 +3,14 @@ package ruItsJava.collections.lists;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.itsjava.collections.lists.linkedlist.MyLinkedLIst;
+import ru.itsjava.collections.lists.linkedlist.MyLinkedList;
 
 @DisplayName("Class MyLinkedList")
 public class MyLinkedListTest {
     @DisplayName("Check size : ")
     @Test
     public void shouldHaveCorrectSizeMethod() {
-        MyLinkedLIst linkedList = new MyLinkedLIst();
+        MyLinkedList linkedList = new MyLinkedList();
         linkedList.add("String1");
         linkedList.add("String2");
         Assertions.assertEquals(linkedList.size(), 2);
@@ -19,7 +19,7 @@ public class MyLinkedListTest {
     @DisplayName("Check Add method : ")
     @Test
     public void shouldHaveCorrectAdd() {
-        MyLinkedLIst linkedList = new MyLinkedLIst();
+        MyLinkedList linkedList = new MyLinkedList();
         linkedList.add("String1");
         linkedList.add("String2");
         Assertions.assertEquals(linkedList.size(), 2);
@@ -29,7 +29,7 @@ public class MyLinkedListTest {
     @DisplayName("Check how to work get() : ")
     @Test
     public void shouldHaveGetMethod() {
-        MyLinkedLIst linkedList = new MyLinkedLIst();
+        MyLinkedList linkedList = new MyLinkedList();
         linkedList.add("String1");
         linkedList.add("String2");
         linkedList.add("String3");
@@ -43,7 +43,7 @@ public class MyLinkedListTest {
     @DisplayName("Check clear method : ")
     @Test
     public void shouldHaveCorrectClearMethod() {
-        MyLinkedLIst linkedList = new MyLinkedLIst();
+        MyLinkedList linkedList = new MyLinkedList();
         linkedList.add("String1");
         linkedList.add("String2");
         linkedList.add("String3");
@@ -55,7 +55,7 @@ public class MyLinkedListTest {
     @DisplayName("Check IsEmpty method : ")
     @Test
     public void shouldHaveCorrectIsEmptyMethod() {
-        MyLinkedLIst linkedList = new MyLinkedLIst();
+        MyLinkedList linkedList = new MyLinkedList();
         linkedList.add("String1");
         linkedList.add("String2");
         Assertions.assertEquals(linkedList.isEmpty(), false);
@@ -66,7 +66,7 @@ public class MyLinkedListTest {
     @DisplayName("Check how work contains() : ")
     @Test
     public void shouldHaveCorrectContainsMethod() {
-        MyLinkedLIst linkedList = new MyLinkedLIst();
+        MyLinkedList linkedList = new MyLinkedList();
         linkedList.add("String1");
         linkedList.add("String2");
         linkedList.add("String3");
@@ -80,7 +80,7 @@ public class MyLinkedListTest {
     @DisplayName("Check how work remove() : ")
     @Test
     public void shouldHaveCorrectRemove() {
-        MyLinkedLIst linkedList = new MyLinkedLIst();
+        MyLinkedList linkedList = new MyLinkedList();
         linkedList.add("String1");
         linkedList.add("String2");
         linkedList.add("String3");
@@ -94,7 +94,7 @@ public class MyLinkedListTest {
     @DisplayName("Check how work set() : ")
     @Test
     public void shouldHaveCorrectSetMethod() {
-        MyLinkedLIst linkedList = new MyLinkedLIst();
+        MyLinkedList linkedList = new MyLinkedList();
         linkedList.add("String1");
         linkedList.add("String2");
         linkedList.add("String3");
