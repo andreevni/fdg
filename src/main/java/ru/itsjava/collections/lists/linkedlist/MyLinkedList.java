@@ -1,9 +1,7 @@
 package ru.itsjava.collections.lists.linkedlist;
 
 
-import java.awt.*;
-
-public class MyLinkedLIst {
+public class MyLinkedList {
     private Node head;
 
     public int size() {
@@ -127,8 +125,28 @@ public class MyLinkedLIst {
     }
 
     public void add(int index, Object element) {
+        if ((index < 0) || (index > size())){
+            throw new ArrayIndexOutOfBoundsException("Некорректный индекс");
+        }
+        if (index == 0) {
+            head = new Node(element, head);
+        }
+        Node curNode = head;
+        Node nextNode = head.getNext();
+        int curIndex = 1;
+        while (nextNode != null) {
+            if (curIndex == index) {
+                curNode.setNext(new Node(element, nextNode));
+                return;
+            }
+            curNode = curNode.getNext();
+            nextNode = nextNode.getNext();
+            curIndex++;
+        }
 
-
+        if (curIndex == index) {
+            curNode.setNext(new Node(element, null));
+        }
     }
 
     public Object remove(int index) {
@@ -171,7 +189,7 @@ public class MyLinkedLIst {
     }
 
     private boolean isCorrectIndex(int index) {
-        if ((index >= 0) && (index <= size())) {
+        if ((index >= 0) && (index < size())) {
             return true;
         }
         return false;
@@ -180,46 +198,29 @@ public class MyLinkedLIst {
     public int indexOf(Object o) {
         Node curNode = head;
         int count = 0;
-        if (head != null && head.getValue().equals(o)) {
-            return count;
-        }
 
-        while (curNode.getNext() != null) {
-            count++;
-            curNode = curNode.getNext();
+        while (curNode != null) {
             if (curNode.getValue().equals(o)) {
                 return count;
             }
+            curNode = curNode.getNext();
+            count++;
         }
         return -1;
     }
 
     public int lastIndexOf(Object o) {
         Node curNode = head;
-        Node resNode = head;
-        int count = 0;
-        int count2 = -1;
-        if (head.getValue().equals(o)) {
-            return 0;
+        int lastIndex = -1;
+        int curIndex = 0;
+        while (curNode != null) {
+            if (curNode.getValue().equals(o)) {
+                lastIndex = curIndex;
+            }
+            curNode = curNode.getNext();
+            curIndex++;
         }
-        while ((curNode = curNode.getNext()) != null) {
-            count++;
-            resNode = resNode.getNext();
-            if (curNode.getValue().equals(o) && curNode.getNext() != null) {
-                curNode = curNode.getNext();
-            }
-
-            if (resNode.getValue().equals(o)) {
-                count2 = count;
-            }
-
-            if (curNode.getValue().equals(o) && curNode.getNext() == null) {
-                return count;
-            } else if (!curNode.getValue().equals(o) && curNode.getNext() == null) {
-                return count2;
-            }
-        }
-        return -1;
+        return lastIndex;
     }
 
     @Override

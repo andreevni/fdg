@@ -1,7 +1,5 @@
 package ru.itsjava.collections.lists.arraylist;
 
-import java.util.Arrays;
-import java.util.List;
 
 public class MyArrayList {
     private static final int DEFAULT_CAPACITY = 10;
@@ -120,7 +118,7 @@ public class MyArrayList {
     }
 
     private boolean isCorrectIndex(int index) {
-        if ((index >= 0) && (index <= realSize)) {
+        if ((index >= 0) && (index < realSize)) {
             return true;
         }
         return false;

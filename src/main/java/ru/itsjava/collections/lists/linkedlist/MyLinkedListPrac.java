@@ -1,8 +1,10 @@
 package ru.itsjava.collections.lists.linkedlist;
 
+
 public class MyLinkedListPrac {
     public static void main(String[] args) {
-        MyLinkedLIst list = new MyLinkedLIst();
+        MyLinkedList list = new MyLinkedList();
+        list.add("String12");
         list.add("String1");
         System.out.println("list = " + list);
         list.add("String2");
@@ -24,11 +26,24 @@ public class MyLinkedListPrac {
         list.add("String2");
         list.add("Str5");
         list.add("Str6");
+        list.add("String2");
 
         System.out.println(list);
 
 
+        System.out.println("list.lastIndexOf(\"String12\") = " + list.lastIndexOf("String12"));
+        System.out.println("list.indexOf(\"String2\") = " + list.indexOf("String2"));
 
+        list.add(8, "STR0");
+        System.out.println("list = " + list);
+
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.add("s1");
+        myLinkedList.add("s2");
+        myLinkedList.add("s3");
+        myLinkedList.add("s4");
+        myLinkedList.add(4,"s0");
+        System.out.println("myLinkedList = " + myLinkedList);
 
 
     }
