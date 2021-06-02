@@ -10,7 +10,7 @@ public class FruitHashMapPractise {
         Man javinskiy = new Man("Javinskiy");
         Man ivanovs = new Man("Ivanovs");
         Man arsikonis = new Man("Arsikonis");
-        Man sidorovs = new Man("Arsikonis");
+        Man sidorovs = new Man("Sidorovs");
         Man latviyskiy = new Man("Latviyskiy");
 //         1.Вставка элементов:
 //         а). Добавить 5 фруктов
