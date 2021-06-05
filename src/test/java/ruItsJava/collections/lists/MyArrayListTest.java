@@ -1,9 +1,11 @@
 package ruItsJava.collections.lists;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import ru.itsjava.collections.lists.arraylist.MyArrayList;
+
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DisplayName("Class MyArrayList")
 public class MyArrayListTest {
@@ -16,7 +18,7 @@ public class MyArrayListTest {
         actualList.add("Elem2");
         actualList.add("Elem3");
         actualList.add("Elem4");
-        Assertions.assertEquals(4, actualList.size());
+        assertEquals(4, actualList.size());
 
     }
 
@@ -25,7 +27,7 @@ public class MyArrayListTest {
     public void shouldCheckIsEmpty() {
         MyArrayList actualList = new MyArrayList();
         actualList.add("Elem1");
-        Assertions.assertEquals(actualList.isEmpty(), false);
+        assertEquals(actualList.isEmpty(), false);
 
     }
 
@@ -34,8 +36,8 @@ public class MyArrayListTest {
     public void shouldHaveContains() {
         MyArrayList actualList = new MyArrayList();
         actualList.add("Elem1");
-        Assertions.assertEquals(actualList.contains("Elem1"), true);
-        Assertions.assertEquals(actualList.contains("ELem21"), false);
+        assertAll("check contains", () -> assertEquals(actualList.contains("Elem1"), true),
+                () -> assertEquals(actualList.contains("ELem21"), false));
 
     }
 
@@ -47,8 +49,7 @@ public class MyArrayListTest {
         actualList.add("Elem2");
         actualList.add("Elem3");
         actualList.add("Elem4");
-        Assertions.assertEquals(actualList.get(0), "Elem1");
-        Assertions.assertEquals(actualList.get(5), null);
+        assertEquals(actualList.get(0), "Elem1");
     }
 
     @DisplayName("Try set method: ")
@@ -60,8 +61,7 @@ public class MyArrayListTest {
         actualList.add("Elem3");
         actualList.add("Elem4");
         actualList.set(1, "Hello from jUnit!");
-        Assertions.assertEquals(actualList.get(1), "Hello from jUnit!");
-
+        assertEquals(actualList.get(1), "Hello from jUnit!");
     }
 
     @DisplayName("Try to remove() objects and check how array decrease: ")
@@ -77,9 +77,8 @@ public class MyArrayListTest {
         actualList.add("Elem7");
         actualList.remove(2);
         actualList.remove(5);
-        Assertions.assertEquals(actualList.get(2), "Elem4");
-        Assertions.assertEquals(actualList.get(4), "Elem6");
-        Assertions.assertEquals(actualList.size(), 5);
+        assertAll("remove obj and decrease", () -> assertEquals(actualList.get(2), "Elem4"),
+                () -> assertEquals(actualList.get(4), "Elem6"), () -> assertEquals(actualList.size(), 5));
 
     }
 
@@ -88,9 +87,8 @@ public class MyArrayListTest {
     public void shouldHaveAddMethod() {
         MyArrayList actualList = new MyArrayList();
         actualList.add("Elem1");
-        Assertions.assertEquals(actualList.add("Element2"), true);
-        Assertions.assertEquals(actualList.size(), 2);
+        assertAll("check add", () -> assertEquals(actualList.add("Element2"), true),
+                () -> assertEquals(actualList.size(), 2));
     }
-
 
 }

@@ -59,7 +59,6 @@ public class MyArrayList {
             realSize--;
             return true;
         }
-
     }
 
     public void clear() {
@@ -71,14 +70,6 @@ public class MyArrayList {
     public Object get(int index) {
         checkIndex(index);
         return array[index];
-
-
-//        for (int i = 0; i < array.length; i++) {
-//            if (array[i] == array[index]) {
-//                return array[index];
-//            }
-//        }
-
     }
 
     public Object set(int index, Object element) {
@@ -143,7 +134,6 @@ public class MyArrayList {
     }
 
     public String toString() {
-//        return "MyArrayList{ "+Arrays.toString(array) + " }";
         StringBuilder stringBuilder = new StringBuilder("MyArrayLst{ ");
         for (int i = 0; i < realSize; i++) {
             stringBuilder.append(array[i]).append(" ");
