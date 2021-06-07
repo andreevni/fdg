@@ -19,7 +19,7 @@ public class PersonTest {
                 () -> assertEquals(21, actualPerson.getAge()));
     }
 
-    @DisplayName("check correct work of method takeBeer() : ")
+    @DisplayName("Сheck correct work of method takeBeer() : ")
     @Test
     public void shouldCheckAgeForSellBeer() {
         Person actualPerson1 = new Person("Vova", 19);
