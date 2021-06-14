@@ -12,7 +12,7 @@ public enum DaysOfTheWeek {
     @Override
     public String toString() {
         return "DaysOfTheWeek { " +
-                "daysTranslate= \"" + dayTranslate + "\" " +
+                "dayTranslate= \"" + dayTranslate + "\" " +
                 "}";
     }
 }
