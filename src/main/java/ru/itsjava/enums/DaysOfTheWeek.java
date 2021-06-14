@@ -4,15 +4,15 @@ public enum DaysOfTheWeek {
     SUNDAY("Воскресенье") , MONDAY ("Понедельник") , TUESDAY ("Вторник") ,
     WEDNESDAY("Среда") , THURSDAY("Четверг") , FRIDAY("Пятница") , SATURDAY("Суббота");
 
-    private final String daysTranslate;
-    DaysOfTheWeek(String daysTranslate) {
-        this.daysTranslate = daysTranslate;
+    private final String dayTranslate;
+    DaysOfTheWeek(String dayTranslate) {
+        this.dayTranslate = dayTranslate;
     }
 
     @Override
     public String toString() {
         return "DaysOfTheWeek { " +
-                "daysTranslate= \"" + daysTranslate + "\" " +
+                "daysTranslate= \"" + dayTranslate + "\" " +
                 "}";
     }
 }
